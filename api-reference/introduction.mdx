@@ -1,33 +1,123 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "API documentation"
+description: "FynCom SDK & API coming in month 6 of our roadmap"
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## coming soon
 
-## Welcome
-
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+FynCom's SDK and API will be released following the beta launch in **month 6** of our [roadmap](/roadmap).
 
 <Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+  title="roadmap timeline"
+  icon="map"
+  href="/roadmap"
+  horizontal
 >
-  View the OpenAPI specification file
+  see the complete 12-month execution plan including SDK/API development milestones
 </Card>
 
-## Authentication
+## what to expect
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+the FynCom SDK and API will enable developers and platforms to integrate our economic trust layer:
 
-```json
-"security": [
-  {
-    "bearerAuth": []
+<CardGroup cols={2}>
+  <Card title="REST API" icon="plug">
+    **endpoints for**:
+    - stake management
+    - refund criteria configuration
+    - transaction history
+    - analytics and reporting
+  </Card>
+  <Card title="client libraries" icon="code">
+    **languages**:
+    - JavaScript / TypeScript
+    - Python
+    - Go
+    - Rust (planned)
+  </Card>
+  <Card title="webhooks" icon="bell">
+    **real-time notifications**:
+    - stake placed
+    - refund issued
+    - stake forfeited
+    - custom events
+  </Card>
+  <Card title="sandbox environment" icon="flask">
+    **testing**:
+    - test API without real money
+    - comprehensive documentation
+    - code examples
+    - integration guides
+  </Card>
+</CardGroup>
+
+## use cases
+
+developers will be able to integrate FynCom's refundable payment layer into:
+
+<Tabs>
+  <Tab title="communications platforms">
+    - email providers (spam filtering with economic layer)
+    - messaging apps (DM protection)
+    - social platforms (connection request filtering)
+  </Tab>
+  <Tab title="business applications">
+    - CRM systems (lead qualification)
+    - customer support (ticket prioritization)
+    - scheduling tools (calendar access monetization)
+  </Tab>
+  <Tab title="creator tools">
+    - fan messaging platforms
+    - consultation booking systems
+    - expert Q&A platforms
+  </Tab>
+</Tabs>
+
+## stay informed
+
+<Steps>
+  <Step title="follow development">
+    track our [roadmap](/roadmap) for SDK/API development progress (months 4-6)
+  </Step>
+  <Step title="join the community">
+    follow [@Fyn_Com](https://x.com/Fyn_Com) on X/Twitter for development updates
+  </Step>
+  <Step title="developer early access">
+    interested in beta testing? email developers@fyncom.com to join the waitlist
+  </Step>
+</Steps>
+
+## technical preview
+
+while full documentation will be available with the beta release, here's a conceptual preview:
+
+```javascript
+// example: require stake for premium endpoint
+const fyncom = require('@fyncom/sdk');
+
+app.post('/contact-expert', fyncom.requireStake({
+  amount: 0.05,  // $0.05 stake
+  refundCriteria: {
+    responseTime: 3600,  // refund if expert responds within 1 hour
+    minEngagement: 300    // or if conversation exceeds 5 minutes
   }
-]
+}), async (req, res) => {
+  // your endpoint logic
+  // stake automatically managed by FynCom
+});
 ```
+
+<Note>
+  actual API syntax and capabilities will be finalized during development. this is illustrative only.
+</Note>
+
+## questions?
+
+<CardGroup cols={2}>
+  <Card title="products overview" icon="mobile-screen" href="/products">
+    learn more about FynCom's technology and products
+  </Card>
+  <Card title="contact developers" icon="envelope" href="mailto:developers@fyncom.com">
+    reach out with specific API questions or partnership inquiries
+  </Card>
+</CardGroup>

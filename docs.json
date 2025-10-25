@@ -1,69 +1,64 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "FynCom MetaDAO Launch",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#4A90E2",
+    "light": "#FF5A5F",
+    "dark": "#008080"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Launch Information",
         "groups": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
+            "group": "Get Started",
+            "pages": ["index", "investment-overview"]
           },
           {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
+            "group": "Token Details",
+            "pages": ["tokenomics"]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "About FynCom",
         "groups": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
+            "group": "Our Solution",
+            "pages": ["problem-solution", "products"]
           },
           {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
+            "group": "Growth Strategy",
+            "pages": ["market", "roadmap"]
+          }
+        ]
+      },
+      {
+        "tab": "Due Diligence",
+        "groups": [
+          {
+            "group": "Team & Execution",
+            "pages": ["team", "governance"]
+          },
+          {
+            "group": "Legal & IP",
+            "pages": ["ip-strategy", "risks"]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "Additional Information",
+            "pages": ["faq", "resources"]
+          },
+          {
+            "group": "API Documentation",
+            "pages": ["api-reference/introduction"]
           }
         ]
       }
@@ -71,14 +66,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "KarmaCall App",
+          "href": "https://www.karmacall.com",
+          "icon": "mobile"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Original White Paper",
+          "href": "https://www.karmacall.com/white-paper-original-scam-calls/",
+          "icon": "file-lines"
         }
       ]
     }
@@ -90,33 +85,33 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Contact",
+        "href": "mailto:contact@fyncom.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Invest Now",
+      "href": "https://metadao.fi"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/Fyn_Com",
+      "linkedin": "https://linkedin.com/company/fyncom",
+      "youtube": "https://youtube.com/@fyncom"
     }
   }
 }

@@ -1,0 +1,450 @@
+---
+title: "governance structure"
+description: "how the FynCom DAO will operate and make decisions"
+---
+
+## MetaDAO framework
+
+FynCom leverages MetaDAO's proven decentralized governance platform to ensure transparent, community-driven decision making.
+
+<CardGroup cols={3}>
+  <Card title="token-based voting" icon="vote-yea">
+    decisions made by FynCom token holders
+  </Card>
+  <Card title="transparent operations" icon="eye">
+    on-chain treasury and public decision history
+  </Card>
+  <Card title="community driven" icon="users">
+    all stakeholders participate in governance
+  </Card>
+</CardGroup>
+
+## governance principles
+
+our DAO operates on core principles that balance decentralization with effective execution:
+
+<Tabs>
+  <Tab title="transparency">
+    **commitment**: all significant decisions, financials, and operations
+    visible to token holders **implementation**: - monthly financial reports -
+    quarterly strategy reviews - real-time treasury visibility (on-chain after
+    month 9) - open proposal discussions
+  </Tab>
+  <Tab title="efficiency">
+    **commitment**: governance enables execution, doesn't paralyze it
+    **implementation**: - clear delegation to team for operational matters - DAO
+    votes on strategic direction, not daily tactics - reasonable voting periods
+    (not too long) - supermajority for major changes only
+  </Tab>
+  <Tab title="alignment">
+    **commitment**: decisions benefit all token holders equally
+    **implementation**: - no special voting classes - proportional voting based
+    on token holdings - performance package aligns team with token holders -
+    anti-whale mechanisms if needed (DAO decides)
+  </Tab>
+  <Tab title="evolution">
+    **commitment**: governance improves based on experience **implementation**:
+    - periodic governance reviews - ability to amend governance rules - learning
+    from other DAOs - pragmatic adjustments as we grow
+  </Tab>
+</Tabs>
+
+## decision categories
+
+different types of decisions have different governance requirements:
+
+### major strategic decisions (supermajority required)
+
+**threshold**: 66%+ of votes must approve
+
+**examples**:
+
+- changes to core protocol economics (stake amounts, refund criteria, treasury split)
+- patent transfer strategy and IP licensing
+- treasury allocation exceeding $100,000
+- major partnership agreements with revenue sharing
+- changes to governance rules themselves
+- fundraising or token issuance
+- merger/acquisition discussions
+
+**rationale**: major decisions need broad consensus to protect all stakeholders
+
+### standard proposals (simple majority)
+
+**threshold**: 50%+ of votes must approve
+
+**examples**:
+
+- feature prioritization and product roadmap
+- marketing budget allocation and strategy
+- hiring key positions (VP level and above)
+- community grant programs (under $100K total)
+- vendor selection for major services
+- geographic expansion decisions
+- open source strategy decisions
+
+**rationale**: strategic direction should reflect majority will while allowing progress
+
+### operational decisions (team execution)
+
+**threshold**: team discretion with transparency
+
+**examples**:
+
+- day-to-day product development
+- minor feature releases
+- individual hiring decisions (below VP level)
+- tactical marketing execution
+- vendor selection for routine services
+- customer support policies
+- bug fixes and maintenance
+
+**rationale**: team needs autonomy to execute efficiently; DAO oversight through regular reporting
+
+## proposal process
+
+how token holders can initiate and vote on proposals:
+
+<Steps>
+  <Step title="proposal submission">
+    **who**: any token holder meeting minimum threshold (TBD, likely 0.1-1% of
+    supply) **requirements**: - clear description of proposal - rationale and
+    expected impact - implementation plan - budget implications - success
+    metrics **format**: standardized template on governance platform
+  </Step>
+  <Step title="discussion period">
+    **duration**: 7 days **purpose**: community debate, questions, refinements
+    **platform**: MetaDAO forum, Discord, community calls **amendments**:
+    proposer can revise based on feedback
+  </Step>
+  <Step title="voting period">
+    **duration**: 7 days **eligibility**: all token holders as of snapshot date
+    (beginning of discussion period) **mechanism**: token-weighted voting
+    on-chain (post-solana integration) **results**: transparent, publicly
+    viewable
+  </Step>
+  <Step title="execution">
+    **if approved**: team implements within specified timeline **progress
+    updates**: regular reports to DAO on implementation **accountability**: team
+    explains any deviations from approved plan **completion**: final report on
+    outcomes and learnings
+  </Step>
+</Steps>
+
+## voting mechanics
+
+### voting power
+
+<ParamField path="calculation" type="formula">
+  voting power = FynCom tokens held
+</ParamField>
+
+**one token = one vote**: simple, transparent, proportional
+
+**snapshot timing**: voting power determined at start of discussion period (prevents vote buying)
+
+**delegation**: token holders can delegate votes to other addresses (optional feature)
+
+### quorum requirements
+
+to prevent low-turnout outcomes:
+
+<AccordionGroup>
+  <Accordion title="major decisions" icon="users">
+    **quorum**: 33% of circulating supply must participate **rationale**:
+    critical decisions need meaningful community engagement **if not met**:
+    proposal fails, can be re-submitted after improvements
+  </Accordion>
+  <Accordion title="standard proposals" icon="user-group">
+    **quorum**: 20% of circulating supply must participate **rationale**:
+    balance accessibility with legitimacy **if not met**: proposal fails, can be
+    re-submitted with better outreach
+  </Accordion>
+</AccordionGroup>
+
+### vote delegation
+
+token holders can focus on areas of interest:
+
+- **delegate votes**: assign your voting power to another address
+- **revoke anytime**: delegation is non-binding, revocable instantly
+- **selective**: delegate for specific proposals or generally
+- **transparent**: all delegations visible on-chain
+
+example: technical experts could attract delegations for technology proposals, business-focused holders for partnerships
+
+## DAO structure
+
+### token holder assembly
+
+**composition**: all FynCom token holders
+
+**role**: ultimate decision-making authority
+
+**power**: vote on proposals per governance rules
+
+**communication**: MetaDAO platform, Discord, monthly community calls
+
+### core team
+
+**composition**: founding team and key hires
+
+**role**: execute approved strategy and manage operations
+
+**accountability**: regular reporting to token holders
+
+**compensation**: per team budget plus performance package
+
+**removal**: DAO can vote to replace leadership if needed (supermajority)
+
+### working groups (future)
+
+as DAO matures, specialized working groups may form:
+
+<CardGroup cols={2}>
+  <Card title="technical working group" icon="code">
+    **focus**: product roadmap, SDK/API, technical partnerships **members**:
+    technical token holders, developers, engineers
+  </Card>
+  <Card title="growth working group" icon="chart-line">
+    **focus**: marketing strategy, geographic expansion, user acquisition
+    **members**: marketing/growth-focused token holders
+  </Card>
+  <Card title="treasury working group" icon="vault">
+    **focus**: financial management, investment strategy, budgeting **members**:
+    finance-savvy token holders
+  </Card>
+  <Card title="governance working group" icon="landmark">
+    **focus**: governance improvements, dispute resolution, process optimization
+    **members**: governance-interested token holders
+  </Card>
+</CardGroup>
+
+**note**: working groups advise and propose; they don't have independent decision authority
+
+## treasury management
+
+transparent, DAO-controlled financial operations:
+
+### treasury sources
+
+<Tabs>
+  <Tab title="fundraise proceeds">
+    **initial**: $1M minimum raise (target: up to $10M) **usage**: per approved
+    budget ($90K/month for 12 months) **accountability**: monthly burn rate
+    reporting
+  </Tab>
+  <Tab title="platform revenue">
+    **ongoing**: 20% of forfeited stakes **growth**: scales with user base and
+    transaction volume **allocation**: per DAO governance (reinvest, distribute,
+    reserve, etc.)
+  </Tab>
+  <Tab title="SDK/API licensing">
+    **future**: enterprise licensing fees **potential**: significant revenue
+    from platform integrations **allocation**: DAO governs usage
+  </Tab>
+  <Tab title="other income">
+    **potential**: premium features, partnerships, IP licensing
+    **transparency**: all income visible on-chain (post-month 9) **control**:
+    DAO decides allocation
+  </Tab>
+</Tabs>
+
+### treasury visibility
+
+<Steps>
+  <Step title="months 1-6: traditional accounting">
+    **reporting**: monthly financial statements to DAO **format**: standard
+    accounting (income, expenses, runway) **transparency**: published via
+    MetaDAO platform
+  </Step>
+  <Step title="month 7-9: hybrid">
+    **transition**: solana integration brings on-chain treasury **mix**: some
+    funds on-chain, some traditional banking **tracking**: dual reporting during
+    transition
+  </Step>
+  <Step title="month 9+: on-chain">
+    **primary**: treasury on solana, visible in real-time **transparency**:
+    anyone can audit treasury at any time **exceptions**: some fiat accounts may
+    remain for operational reasons
+  </Step>
+</Steps>
+
+### spending approvals
+
+<AccordionGroup>
+  <Accordion title="within approved budget" icon="check">
+    **authority**: team can spend per approved monthly budget ($90K/month)
+    
+    **reporting**: monthly breakdown of actual spending
+    
+    **variance**: minor variances expected and acceptable
+    
+    **transparency**: all expenses documented
+  </Accordion>
+  <Accordion title="budget overruns" icon="exclamation">
+    **small overruns**: < 10% require explanation, no vote needed
+    
+    **significant overruns**: > 10% require DAO approval for additional funds
+    
+    **emergency**: team can act first, seek ratification immediately after
+  </Accordion>
+  <Accordion title="off-budget spending" icon="hand">
+    **any amount**: requires DAO proposal and vote
+    
+    **threshold**: standard majority for < $100K, supermajority for > $100K
+    
+    **emergency exception**: critical security/legal issues (seek immediate ratification)
+  </Accordion>
+</AccordionGroup>
+
+## accountability & reporting
+
+regular, transparent communication with token holders:
+
+### monthly reports
+
+**content**:
+
+- financial: income, expenses, runway remaining, treasury balance
+- users: downloads, active users, engagement metrics
+- product: features shipped, bugs fixed, uptime
+- partnerships: new integrations, partnership progress
+- upcoming: next month's priorities and goals
+
+**format**: written report + data dashboard
+
+**timing**: first week of each month
+
+**distribution**: MetaDAO platform, email to token holders, public website
+
+### quarterly strategy reviews
+
+**content**:
+
+- progress vs. roadmap
+- key wins and challenges
+- strategic adjustments if needed
+- next quarter priorities
+- financial deep dive
+- Q&A with community
+
+**format**: live community call + detailed written report
+
+**timing**: end of each quarter
+
+**recording**: published for those who can't attend live
+
+### annual comprehensive report
+
+**content**:
+
+- full year review vs. original goals
+- financial audit (if DAO approves)
+- user growth and retention analysis
+- product and technical achievements
+- partnership and ecosystem development
+- year 2 strategy and budget proposal
+
+**format**: detailed report + town hall presentation
+
+**timing**: end of year 1
+
+**approval**: year 2 budget requires DAO vote
+
+## dispute resolution
+
+handling disagreements within the DAO:
+
+<Steps>
+  <Step title="informal resolution">
+    **first step**: community discussion in Discord/forums **many disputes**:
+    resolved through dialogue and clarification
+  </Step>
+  <Step title="mediation">
+    **if needed**: neutral community members mediate **goal**: find mutually
+    acceptable solution
+  </Step>
+  <Step title="formal proposal">
+    **if unresolved**: dispute parties can submit competing proposals **DAO
+    decides**: token holders vote on outcome
+  </Step>
+  <Step title="arbitration (extreme cases)">
+    **last resort**: binding arbitration per DAO rules **rare**: reserved for
+    major disputes threatening DAO
+  </Step>
+</Steps>
+
+## emergency procedures
+
+handling critical situations that require fast action:
+
+<AccordionGroup>
+  <Accordion title="security incidents" icon="shield-exclamation">
+    **authority**: team can act immediately to protect users and funds
+    **communication**: notify DAO ASAP with details **ratification**: seek DAO
+    approval within 48 hours of action **transparency**: full post-mortem
+    published
+  </Accordion>
+  <Accordion title="legal/regulatory" icon="gavel">
+    **authority**: team can respond to legal demands immediately
+    **consultation**: engage legal counsel as needed **reporting**: inform DAO
+    within reasonable timeframes (respecting legal privilege) **approval**: seek
+    DAO ratification if material impact
+  </Accordion>
+  <Accordion title="market crises" icon="chart-line-down">
+    **authority**: team can make tactical adjustments (e.g., pause features,
+    adjust rates) **communication**: explain actions to DAO immediately
+    **review**: DAO can override team decisions if disagreement **learning**:
+    incorporate lessons into processes
+  </Accordion>
+</AccordionGroup>
+
+## governance evolution
+
+our governance will improve over time:
+
+<Tabs>
+  <Tab title="initial phase (months 1-6)">
+    **focus**: establish routines, learn what works **flexibility**: adjust
+    processes quickly based on experience **education**: help token holders
+    learn governance
+  </Tab>
+  <Tab title="maturation (months 7-12)">
+    **focus**: optimize processes, form working groups **efficiency**:
+    streamline proposal process **engagement**: increase participation rates
+  </Tab>
+  <Tab title="long-term (year 2+)">
+    **focus**: sophisticated governance tools **potential**: quadratic voting,
+    reputation systems, advanced delegation **evolution**: DAO decides
+    governance improvements
+  </Tab>
+</Tabs>
+
+## learning from others
+
+FynCom DAO will learn from successful DAO governance:
+
+- **Uniswap**: effective delegation and working groups
+- **MakerDAO**: structured decision-making for complex issues
+- **Compound**: clear proposal templates and voting
+- **MetaDAO projects**: specific learnings from platform experiences
+
+we'll adopt best practices while remaining pragmatic and focused on execution.
+
+## next steps
+
+<CardGroup cols={2}>
+  <Card title="tokenomics" icon="coins" href="/tokenomics">
+    understand voting power and token utility
+  </Card>
+  <Card title="team accountability" icon="users" href="/team">
+    see how team reports to DAO
+  </Card>
+  <Card title="IP governance" icon="file-contract" href="/ip-strategy">
+    DAO's role in IP decisions
+  </Card>
+  <Card title="invest now" icon="rocket" href="/investment-overview">
+    become a DAO governance participant
+  </Card>
+</CardGroup>

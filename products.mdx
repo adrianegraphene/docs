@@ -1,0 +1,300 @@
+---
+title: "products & technology"
+description: "KarmaCall, Time-Based Nano-Transactions, and the future of agentic AI negotiation"
+---
+
+## KarmaCall: the flagship product
+
+KarmaCall is our live mobile application that demonstrates the viability of economic trust in digital communications.
+
+### current features
+
+<CardGroup cols={2}>
+  <Card title="unknown call blocking" icon="phone-slash">
+    automatically blocks calls from unknown, unstaked numbers **status**: live
+    on iOS & Android
+  </Card>
+  <Card title="text filtering" icon="comment-slash">
+    filters text messages from unknown senders **status**: live on iOS & Android
+  </Card>
+  <Card title="cash-back rewards" icon="money-bill-1">
+    users earn cash-back for every blocked spam call or text **status**:
+    treasury-funded, 500,000+ transactions
+  </Card>
+  <Card title="whitelist management" icon="list-check">
+    easy management of trusted contacts who can always reach you **status**:
+    live with automatic learning
+  </Card>
+</CardGroup>
+
+### download KarmaCall
+
+<Card
+  title="get KarmaCall"
+  icon="mobile"
+  href="https://www.karmacall.com"
+  horizontal
+>
+  available now on iOS App Store and Google Play Store
+</Card>
+
+## Time-Based Nano-Transaction System
+
+the core technology powering FynCom's solution, protected by US patent 11,310,368 B2.
+
+### how it works
+
+<Steps>
+  <Step title="stake placement">
+    when an unknown sender initiates contact, a small refundable stake is
+    required: - **phone calls**: default $0.05 - **messages**: default $0.01 -
+    **customizable**: premium users set their own rates
+  </Step>
+  <Step title="engagement measurement">
+    the system automatically measures meaningful engagement: - **calls**:
+    conversation duration (default 25 seconds for refund) - **messages**: thread
+    response count (default 3 responses for refund) - **emails**: similar
+    thread-based measurement
+  </Step>
+  <Step title="automatic settlement">
+    based on engagement, the system automatically: - **refunds** the sender if
+    engagement criteria are met - **forfeit stakes** if criteria aren't met,
+    distributing: - 80% to recipient (monetizing their attention) - 20% to
+    FynCom treasury (platform sustainability)
+  </Step>
+</Steps>
+
+### technical advantages
+
+<AccordionGroup>
+  <Accordion title="real-time processing" icon="bolt">
+    stakes are held and released in real-time based on engagement metrics. no
+    manual review, no delays.
+  </Accordion>
+  <Accordion title="blockchain-ready" icon="link">
+    designed for integration with multiple blockchain networks. current
+    implementation supports traditional payments; Solana integration planned for
+    months 7-9.
+  </Accordion>
+  <Accordion title="scalable micro-transactions" icon="chart-line">
+    efficiently processes millions of nano-transactions (cents or fractions)
+    without prohibitive fees.
+  </Accordion>
+  <Accordion title="privacy-preserving" icon="shield">
+    engagement measurement doesn't require content analysis. system only
+    measures duration/frequency, not message content.
+  </Accordion>
+  <Accordion title="cross-platform" icon="layer-group">
+    works across phone calls, SMS, email, and social media DMs. unified economic
+    layer for all digital communication.
+  </Accordion>
+</AccordionGroup>
+
+## SDK & API expansion
+
+months 4-6 of our roadmap focus on making FynCom technology easily accessible to developers and platforms.
+
+### planned SDK features
+
+<Tabs>
+  <Tab title="communications platforms">
+    **target integrations**: email providers, messaging apps, social platforms
+    **capabilities**: - drop-in spam protection with refundable payment layer -
+    customizable stake amounts and refund criteria - analytics dashboard for
+    platform operators - white-label options for branded implementations
+  </Tab>
+  <Tab title="business applications">
+    **target integrations**: CRM systems, customer support platforms, scheduling
+    tools **capabilities**: - qualify inbound leads with economic signals -
+    monetize consultation requests - protect high-value time (executives,
+    experts, consultants) - integration with existing billing systems
+  </Tab>
+  <Tab title="developer tools">
+    **target users**: app developers, indie hackers, startups **capabilities**:
+    - REST API for stake management - webhooks for real-time notifications -
+    client libraries (JavaScript, Python, Go, Rust) - comprehensive
+    documentation and examples
+  </Tab>
+</Tabs>
+
+### API preview
+
+while full documentation will be available post-fundraise, here's a conceptual preview:
+
+```javascript
+// example: require stake for API endpoint access
+const fyncom = require("@fyncom/sdk");
+
+app.post(
+  "/premium-contact",
+  fyncom.requireStake({
+    amount: 0.05,
+    refundCriteria: {
+      responseTime: 3600, // refund if response within 1 hour
+      minEngagement: 300, // or if engagement > 5 minutes
+    },
+  }),
+  async (req, res) => {
+    // your premium endpoint logic
+    // stake is automatically managed
+  }
+);
+```
+
+<Note>
+  full SDK and API documentation coming soon. visit [API
+  reference](/api-reference/introduction) for updates.
+</Note>
+
+## agentic AI negotiation system
+
+the next frontier: protecting humans from the AI communications flood.
+
+### the challenge
+
+as autonomous AI agents become ubiquitous:
+
+- **volume explosion**: AI can send thousands of personalized contacts per second
+- **sophistication increase**: AI-generated messages are increasingly indistinguishable from human communication
+- **human overwhelm**: people can't manually filter this volume
+
+### the FynCom agent solution
+
+we're building an AI agent that acts as your personal negotiator:
+
+<Steps>
+  <Step title="agent-to-agent negotiation">
+    when an external AI agent wants to contact you, your FynCom agent
+    negotiates: - appropriate stake amount based on context - refund criteria
+    that match your preferences - timing and urgency considerations
+  </Step>
+  <Step title="intelligent filtering">
+    your FynCom agent learns your preferences: - what types of contacts you
+    value - when you're available vs. busy - which senders have good reputation
+    - market rates for your attention
+  </Step>
+  <Step title="optimal outcomes">
+    automatically ensures you either: - receive only high-value communications -
+    get paid appropriately for your time and attention - maintain control
+    without manual intervention
+  </Step>
+</Steps>
+
+### development timeline
+
+<CardGroup cols={3}>
+  <Card title="months 10-11" icon="code">
+    **core development** agent negotiation protocol, preference learning,
+    reputation systems
+  </Card>
+  <Card title="month 12" icon="flask">
+    **beta testing** controlled rollout with early users, refinement based on
+    feedback
+  </Card>
+  <Card title="year 2+" icon="rocket">
+    **full deployment** general availability, advanced features, cross-platform
+    support
+  </Card>
+</CardGroup>
+
+### research foundation
+
+our approach is informed by cutting-edge research in virtual agent economies:
+
+<Accordion
+  title="Google DeepMind: virtual agent economies"
+  icon="graduation-cap"
+>
+  recent research (arXiv:2509.10147v1) explores how autonomous agents create
+  economic systems. FynCom positions itself at the intersection of human-agent
+  interaction, providing the economic protocol layer.
+</Accordion>
+
+## technology roadmap
+
+### phase 1: current (proven)
+
+- ✅ KarmaCall mobile apps (iOS & Android)
+- ✅ Time-Based Nano-Transaction System
+- ✅ 500,000+ transactions processed
+- ✅ cash-back treasury system
+
+### phase 2: expansion (months 1-9)
+
+- 🔨 geographic expansion in high-spam markets
+- 🔨 SDK & API for developer integration
+- 🔨 solana blockchain integration
+- 🔨 strategic partnerships with communication platforms
+
+### phase 3: AI era (months 10-12+)
+
+- 🔮 agentic negotiation system
+- 🔮 advanced preference learning
+- 🔮 multi-agent protocol standards
+- 🔮 cross-platform agent deployment
+
+## integration examples
+
+potential use cases for FynCom technology:
+
+<CardGroup cols={2}>
+  <Card title="email providers" icon="envelope">
+    integrate refundable payment layer as premium anti-spam feature
+  </Card>
+  <Card title="social platforms" icon="users">
+    protect high-profile users from DM spam while enabling legitimate contact
+  </Card>
+  <Card title="customer support" icon="headset">
+    qualify support requests with economic signals, prioritize queue
+  </Card>
+  <Card title="scheduling tools" icon="calendar">
+    monetize calendar access for busy professionals, consultants, experts
+  </Card>
+  <Card title="professional networks" icon="briefcase">
+    LinkedIn-style platforms with economic filtering for connection requests
+  </Card>
+  <Card title="creator platforms" icon="video">
+    enable creators to monetize attention while staying accessible to genuine
+    fans
+  </Card>
+</CardGroup>
+
+## technical specifications
+
+<Tabs>
+  <Tab title="current infrastructure">
+    - **mobile platforms**: iOS 14+, Android 8+ - **backend**: scalable cloud
+    infrastructure - **payment processing**: traditional rails (expanding to
+    crypto) - **call blocking**: integration with iOS CallKit and Android
+    telecom framework - **message filtering**: SMS/MMS filtering capabilities
+  </Tab>
+  <Tab title="blockchain integration">
+    - **target**: solana mainnet (months 7-9) - **rationale**: high throughput,
+    low fees, perfect for micro-transactions - **features**: on-chain stake
+    escrow, automatic refunds, transparent treasury - **compatibility**:
+    maintains backward compatibility with traditional payments
+  </Tab>
+  <Tab title="security & privacy">
+    - **data minimization**: only engagement metrics collected, not content -
+    **end-to-end encryption**: supported where underlying platform provides it -
+    **stake privacy**: transaction details private to sender/recipient -
+    **compliance**: GDPR-ready, CCPA-compliant, SOC 2 planned
+  </Tab>
+</Tabs>
+
+## next steps
+
+<CardGroup cols={2}>
+  <Card title="see the market" icon="globe" href="/market">
+    understand our target markets and growth strategy
+  </Card>
+  <Card title="view roadmap" icon="map" href="/roadmap">
+    detailed 12-month execution plan
+  </Card>
+  <Card title="review IP strategy" icon="file-contract" href="/ip-strategy">
+    patent details and IP transfer roadmap
+  </Card>
+  <Card title="invest now" icon="rocket" href="/investment-overview">
+    participate in the MetaDAO launch
+  </Card>
+</CardGroup>
