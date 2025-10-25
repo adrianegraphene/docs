@@ -1,0 +1,458 @@
+---
+title: 'Technology Overview'
+description: 'Technical architecture of the FynCom protocol'
+---
+
+## Architecture Overview
+
+FynCom is built on a modern, scalable architecture that combines blockchain technology, mobile applications, and traditional communication infrastructure.
+
+<Info>
+  **Core Technology Stack:**
+  - **Blockchain:** Solana (SPL tokens, smart contracts)
+  - **Mobile:** Native iOS/Android apps
+  - **Backend:** Cloud infrastructure (AWS)
+  - **APIs:** RESTful API + WebSocket for real-time
+  - **Security:** End-to-end encryption, multi-sig wallets
+</Info>
+
+## System Components
+
+<CardGroup cols={2}>
+  <Card title="FynCom Protocol" icon="shield">
+    Core logic for stake management, refund criteria, and treasury operations
+  </Card>
+  <Card title="Blockchain Layer" icon="link">
+    Solana smart contracts handling transactions, stakes, and token operations
+  </Card>
+  <Card title="Mobile Apps" icon="mobile">
+    KarmaCall iOS/Android apps for end-user interaction
+  </Card>
+  <Card title="SDK & API" icon="code">
+    Developer tools for third-party integrations
+  </Card>
+</CardGroup>
+
+## How It Works: Technical Flow
+
+### Phone Call Flow
+
+<Steps>
+  <Step title="Call Attempt">
+    Unknown number attempts to call FynCom-protected recipient
+  </Step>
+  <Step title="Stake Check">
+    FynCom middleware intercepts call and checks for stake
+    - If no stake: Call blocked, sender notified via SMS/IVR
+    - If stake exists: Call proceeds to recipient
+  </Step>
+  <Step title="Call Duration Tracking">
+    System monitors call connection and duration in real-time
+  </Step>
+  <Step title="Automatic Settlement">
+    When call ends:
+    - If duration ≥ 25 seconds: Refund stake to sender
+    - If duration < 25 seconds: Forfeit stake (80% recipient, 20% treasury)
+    - Smart contract executes settlement automatically
+  </Step>
+</Steps>
+
+### Message Flow (SMS/Email/DM)
+
+<Steps>
+  <Step title="Message Sent">
+    Unknown sender attempts to message FynCom-protected recipient
+  </Step>
+  <Step title="Stake Requirement">
+    FynCom API intercepts message and requires stake
+    - If no stake: Message filtered to spam folder
+    - If stake exists: Message delivered to inbox
+  </Step>
+  <Step title="Thread Monitoring">
+    System tracks conversation thread and response count
+  </Step>
+  <Step title="Automatic Settlement">
+    After thread closes or timeout:
+    - If ≥ 3 responses in thread: Refund stake to sender
+    - If < 3 responses: Forfeit stake (80% recipient, 20% treasury)
+    - Smart contract executes settlement automatically
+  </Step>
+</Steps>
+
+## Smart Contract Architecture
+
+### Stake Contract
+
+```solidity
+// Simplified conceptual code
+
+contract StakeManager {
+  struct Stake {
+    address sender;
+    address recipient;
+    uint256 amount;
+    uint256 timestamp;
+    RefundCriteria criteria;
+    bool settled;
+  }
+
+  mapping(bytes32 => Stake) public stakes;
+
+  function createStake(
+    address recipient,
+    RefundCriteria criteria
+  ) external payable {
+    // Lock sender's tokens
+    // Create stake record
+    // Emit StakeCreated event
+  }
+
+  function settleStake(
+    bytes32 stakeId,
+    bool criteriaMetOrNot
+  ) external {
+    Stake storage stake = stakes[stakeId];
+    require(!stake.settled, "Already settled");
+
+    if (criteriaMetOrNot) {
+      // Refund sender
+      _refund(stake.sender, stake.amount);
+    } else {
+      // Forfeit: 80% to recipient, 20% to treasury
+      _forfeit(stake.recipient, stake.amount * 80 / 100);
+      _forfeit(treasury, stake.amount * 20 / 100);
+    }
+
+    stake.settled = true;
+    emit StakeSettled(stakeId, criteriaMetOrNot);
+  }
+}
+```
+
+### Treasury Contract
+
+- Holds 20% of all forfeited stakes
+- Multi-signature control for withdrawals
+- Transparent on-chain accounting
+- Governance voting for allocation decisions
+
+## SDK & API
+
+### Developer Integration
+
+FynCom provides comprehensive SDK and API for platform integrations:
+
+<Tabs>
+  <Tab title="JavaScript SDK">
+    ```javascript
+    import { FynCom } from '@fyncom/sdk';
+
+    const fyncom = new FynCom({
+      apiKey: 'your-api-key',
+      network: 'mainnet'
+    });
+
+    // Require stake for incoming communication
+    const result = await fyncom.requireStake({
+      sender: 'unknown@example.com',
+      recipient: 'user@example.com',
+      amount: 0.01,
+      refundCriteria: {
+        type: 'thread_length',
+        minResponses: 3,
+        timeoutHours: 72
+      }
+    });
+
+    // Check stake status
+    const status = await fyncom.getStakeStatus(result.stakeId);
+
+    // Manually settle (if automated settlement disabled)
+    await fyncom.settleStake(result.stakeId, true); // true = refund
+    ```
+  </Tab>
+
+  <Tab title="Python SDK">
+    ```python
+    from fyncom import FynCom
+
+    fyncom = FynCom(
+        api_key='your-api-key',
+        network='mainnet'
+    )
+
+    # Require stake for incoming communication
+    result = fyncom.require_stake(
+        sender='unknown@example.com',
+        recipient='user@example.com',
+        amount=0.01,
+        refund_criteria={
+            'type': 'thread_length',
+            'min_responses': 3,
+            'timeout_hours': 72
+        }
+    )
+
+    # Check stake status
+    status = fyncom.get_stake_status(result['stake_id'])
+
+    # Manually settle
+    fyncom.settle_stake(result['stake_id'], met=True)
+    ```
+  </Tab>
+
+  <Tab title="REST API">
+    ```bash
+    # Create stake
+    curl -X POST https://api.fyncom.com/v1/stakes \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "sender": "unknown@example.com",
+        "recipient": "user@example.com",
+        "amount": 0.01,
+        "refund_criteria": {
+          "type": "thread_length",
+          "min_responses": 3,
+          "timeout_hours": 72
+        }
+      }'
+
+    # Check stake status
+    curl https://api.fyncom.com/v1/stakes/{stake_id} \
+      -H "Authorization: Bearer YOUR_API_KEY"
+
+    # Settle stake
+    curl -X POST https://api.fyncom.com/v1/stakes/{stake_id}/settle \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{"criteria_met": true}'
+    ```
+  </Tab>
+</Tabs>
+
+## Security Features
+
+<AccordionGroup>
+  <Accordion title="Smart Contract Security" icon="shield-check">
+    - Audited by leading blockchain security firms
+    - Multi-signature treasury management
+    - Time-locks on critical operations
+    - Emergency pause functionality
+    - Upgradeable contracts with governance approval
+  </Accordion>
+
+  <Accordion title="Payment Security" icon="lock">
+    - End-to-end encryption for all transactions
+    - PCI-DSS compliance for fiat payments
+    - Multi-factor authentication
+    - Hardware wallet support
+    - Cold storage for treasury funds
+  </Accordion>
+
+  <Accordion title="Privacy Protection" icon="user-shield">
+    - Zero-knowledge proofs for stake verification (future)
+    - No PII stored on-chain
+    - Opt-in analytics only
+    - GDPR compliant
+    - Right to be forgotten
+  </Accordion>
+
+  <Accordion title="Anti-Fraud Measures" icon="ban">
+    - Rate limiting on stake creation
+    - Sybil attack detection
+    - Address reputation scoring
+    - Automatic stake slashing for abuse
+    - Community reporting system
+  </Accordion>
+</AccordionGroup>
+
+## Scalability
+
+### Current Performance
+
+- **Transactions per second:** 500+ (limited by current user base)
+- **API latency:** <100ms (p99)
+- **Uptime:** 99.9%
+- **Concurrent users:** 10K+
+
+### Scaling Plan
+
+<Steps>
+  <Step title="Phase 1: Optimize Current Stack (Months 1-3)">
+    - Implement caching layers
+    - Database sharding
+    - CDN for static assets
+    - Load balancer optimization
+    - Target: 100K concurrent users
+  </Step>
+  <Step title="Phase 2: Blockchain Scaling (Months 4-6)">
+    - Solana integration (high TPS)
+    - Layer-2 solutions for micro-transactions
+    - Batch settlement for efficiency
+    - Target: 1M transactions/day
+  </Step>
+  <Step title="Phase 3: Global Distribution (Months 7-12)">
+    - Multi-region deployment
+    - Edge computing for low latency
+    - Distributed backend services
+    - Target: 10M transactions/day
+  </Step>
+</Steps>
+
+## Integration Examples
+
+### Email Provider Integration
+
+```javascript
+// Gmail plugin example
+chrome.runtime.onMessage.addListener(async (message) => {
+  if (message.type === 'NEW_EMAIL') {
+    const sender = message.from;
+    const isKnown = await checkContactList(sender);
+
+    if (!isKnown) {
+      // Require stake via FynCom API
+      const stake = await fyncom.requireStake({
+        sender,
+        recipient: getCurrentUser(),
+        amount: 0.01,
+        refundCriteria: { type: 'thread_length', minResponses: 3 }
+      });
+
+      if (!stake.exists) {
+        // Move to spam folder
+        moveToFolder(message.id, 'spam');
+        showNotification('Email filtered - no stake');
+      }
+    }
+  }
+});
+```
+
+### CRM Integration
+
+```python
+# Salesforce outreach integration
+def send_cold_email(recipient, message):
+    # Create stake before sending
+    stake = fyncom.require_stake(
+        sender=current_user_email(),
+        recipient=recipient,
+        amount=0.01,
+        refund_criteria={'type': 'thread_length', 'min_responses': 1}
+    )
+
+    # Send email with stake ID in headers
+    send_email(
+        to=recipient,
+        subject=message['subject'],
+        body=message['body'],
+        headers={'X-FynCom-Stake': stake['stake_id']}
+    )
+
+    # Track stake for reporting
+    log_stake(stake['stake_id'], recipient)
+```
+
+## Roadmap: Technology Development
+
+<Tabs>
+  <Tab title="Q1 2025">
+    - **SDK Launch:** JavaScript, Python, REST API
+    - **Solana Integration:** SPL token, smart contracts
+    - **Email Extension:** Gmail plugin beta
+    - **API Documentation:** Comprehensive dev docs
+  </Tab>
+
+  <Tab title="Q2 2025">
+    - **SMS SDK:** Carrier-level integration tools
+    - **Webhook System:** Real-time event notifications
+    - **Analytics Dashboard:** Developer metrics
+    - **White-label UI:** Embeddable components
+  </Tab>
+
+  <Tab title="Q3 2025">
+    - **Agentic AI System:** Automated negotiation protocol
+    - **Custom Criteria Engine:** User-defined refund rules
+    - **Multi-chain Support:** Ethereum, Polygon
+    - **Enterprise Features:** SSO, audit logs, SLAs
+  </Tab>
+
+  <Tab title="Q4 2025">
+    - **Mobile SDK:** Native iOS/Android libraries
+    - **GraphQL API:** Alternative to REST
+    - **Advanced Analytics:** ML-powered insights
+    - **Decentralized Governance:** On-chain voting
+  </Tab>
+</Tabs>
+
+## Open Source
+
+We're committed to open development:
+
+### Currently Open Source
+- Smart contracts (audited, verified on-chain)
+- SDK client libraries
+- Integration examples
+- Documentation
+
+### Future Open Source Plans
+- Backend reference implementation
+- Spam detection models (anonymized data)
+- Research papers and algorithms
+- Developer tools and testing frameworks
+
+<Card
+  title="GitHub Repository"
+  icon="github"
+  href="https://github.com/fyncom"
+>
+  Explore our open source code and contribute
+</Card>
+
+## Developer Resources
+
+<CardGroup cols={2}>
+  <Card
+    title="API Documentation"
+    icon="book"
+    href="/api-reference/introduction"
+  >
+    Complete API reference and guides
+  </Card>
+  <Card
+    title="SDK Examples"
+    icon="code"
+    href="https://github.com/fyncom/examples"
+  >
+    Integration examples in multiple languages
+  </Card>
+  <Card
+    title="Developer Discord"
+    icon="discord"
+    href="https://discord.gg/fyncom-dev"
+  >
+    Get help from the community and team
+  </Card>
+  <Card
+    title="Bug Bounty"
+    icon="bug"
+    href="/security/bug-bounty"
+  >
+    Earn rewards for finding vulnerabilities
+  </Card>
+</CardGroup>
+
+## Technical Whitepaper
+
+For a deeper dive into the technical architecture, cryptographic protocols, and economic models, read our whitepaper:
+
+<Card
+  title="FynCom Whitepaper"
+  icon="file-pdf"
+  href="https://www.karmacall.com/white-paper-original-scam-calls/"
+  horizontal
+>
+  Technical deep-dive into time-based nano-transaction systems
+</Card>

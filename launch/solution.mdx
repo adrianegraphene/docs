@@ -1,0 +1,222 @@
+---
+title: 'The Solution'
+description: 'Economic proof-of-intent: Restoring trust through refundable stakes'
+---
+
+## The FynCom Protocol
+
+FynCom solves the spam problem with **economic proof-of-intent**—a system where every communication from an unknown sender requires a small, refundable stake.
+
+<Info>
+  **Core Principle:** If communication costs nothing, spam thrives. If communication requires accountability, trust returns.
+</Info>
+
+## How It Works
+
+### For Phone Calls
+
+<Steps>
+  <Step title="Unknown Caller Attempts Contact">
+    An unknown number calls a FynCom user.
+  </Step>
+  <Step title="Stake Required">
+    The caller must stake **$0.05** to ring through. If they don't stake, the call is blocked (no notification to recipient).
+  </Step>
+  <Step title="Call Connects">
+    If the recipient answers, the call proceeds normally.
+  </Step>
+  <Step title="Automatic Refund or Forfeit">
+    - **Refund:** If the conversation lasts 25+ seconds, the caller gets their stake back automatically
+    - **Forfeit:** If the call is shorter, the stake is forfeited (80% to recipient, 20% to treasury)
+  </Step>
+</Steps>
+
+### For Messages (Text, Email, DMs)
+
+<Steps>
+  <Step title="Unknown Sender Attempts Contact">
+    An unknown person sends a message to a FynCom user.
+  </Step>
+  <Step title="Stake Required">
+    The sender must stake **$0.01** for the message to reach the recipient's inbox. Otherwise, it's filtered.
+  </Step>
+  <Step title="Message Delivered">
+    The recipient sees the message and can choose to engage.
+  </Step>
+  <Step title="Automatic Refund or Forfeit">
+    - **Refund:** If there are 3+ thread responses, the sender gets their stake back automatically
+    - **Forfeit:** If not, the stake is forfeited (80% to recipient, 20% to treasury)
+  </Step>
+</Steps>
+
+## Why This Works
+
+<CardGroup cols={2}>
+  <Card title="Economic Barrier" icon="shield">
+    Spam becomes unprofitable. A spammer sending 1M messages needs to stake $10,000—and loses most of it when recipients don't engage.
+  </Card>
+  <Card title="Self-Correcting" icon="arrows-rotate">
+    No central authority needed. The economics automatically filter out bad actors while rewarding legitimate senders.
+  </Card>
+  <Card title="Fair to Senders" icon="handshake">
+    Legitimate senders get refunded. They lose nothing for good-faith communication. Only bad actors pay.
+  </Card>
+  <Card title="Fair to Recipients" icon="coins">
+    Recipients get compensated for spam. Their attention becomes a valuable, tradeable asset.
+  </Card>
+</CardGroup>
+
+## Advanced Features
+
+### Premium Pricing
+
+Recipients can set their own rates:
+- Default: $0.05/call, $0.01/message
+- Premium: Set higher rates based on your value of time
+- Dynamic: Adjust rates based on time of day, sender location, etc.
+
+**This creates a real marketplace for attention.**
+
+### Custom Refund Criteria
+
+Coming soon: Recipients can define their own refund conditions:
+- Minimum call duration
+- Number of message exchanges
+- Specific keywords or topics
+- Time-based rules
+
+### Agentic AI Negotiation
+
+The future: AI agents negotiate on your behalf:
+- Your agent sets stake requirements
+- Sender's agent evaluates and negotiates
+- Automatic agreement on stake/refund terms
+- Seamless human experience
+
+## Real-World Example
+
+### Scenario: Sales Outreach
+
+**Traditional System:**
+- Sales rep sends 1,000 cold emails
+- Cost: $0
+- Response rate: 2% (20 responses)
+- Value to rep: High (potential deals)
+- Cost to recipients: 1,000 people waste time filtering/deleting
+
+**FynCom System:**
+- Sales rep sends 1,000 cold emails
+- Cost: $10 staked (1,000 × $0.01)
+- Response rate: 2% (20 responses)
+- Refund: $0.20 (20 × $0.01)
+- Forfeit: $9.80
+- Cost to rep: **$9.80** (only for non-responses)
+- Value to recipients: **$7.84** (80% of forfeits distributed to 980 non-responders)
+- Value to treasury: **$1.96** (20% of forfeits)
+
+**Result:**
+- Rep still reaches interested prospects (gets refunded)
+- Non-interested recipients get compensated
+- Treasury funds protocol development
+- Everyone's incentives are aligned
+
+## The Traction Proof
+
+This isn't theory. FynCom has already completed:
+
+<Tip>
+  **Over 500,000 "cash-back" transactions** across calls, texts, and emails through our KarmaCall mobile app.
+</Tip>
+
+Users love it because:
+- **Spam drops to near-zero** (spammers can't afford to stake)
+- **Legitimate calls get through** (senders get refunded)
+- **Recipients earn rewards** (getting paid to filter spam)
+
+## Technical Architecture
+
+### Blockchain Integration
+
+FynCom uses **Solana** for:
+- Fast, low-cost transactions
+- Automatic stake/refund logic via smart contracts
+- Transparent treasury management
+- Scalable to billions of transactions
+
+### SDK & API
+
+Developers can integrate FynCom's refundable payment protocol into:
+- Messaging platforms
+- Email clients
+- Social media DMs
+- Enterprise communications tools
+
+<CodeGroup>
+```javascript JavaScript
+import { FynCom } from '@fyncom/sdk';
+
+const fyncom = new FynCom({ apiKey: 'your-key' });
+
+// Require stake for incoming message
+const result = await fyncom.requireStake({
+  sender: 'unknown@example.com',
+  amount: 0.01,
+  refundCriteria: { minThreadLength: 3 }
+});
+```
+
+```python Python
+from fyncom import FynCom
+
+fyncom = FynCom(api_key='your-key')
+
+# Require stake for incoming message
+result = fyncom.require_stake(
+    sender='unknown@example.com',
+    amount=0.01,
+    refund_criteria={'min_thread_length': 3}
+)
+```
+</CodeGroup>
+
+## Intellectual Property
+
+FynCom's approach is protected by:
+
+**US Patent 11,310,368 B2**
+*"Time-Based Nano-Transaction System for Reducing Unsolicited Communications"*
+
+This patent covers the core mechanism of time-based refundable stakes for communication filtering.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="View Roadmap"
+    icon="map"
+    href="/launch/roadmap"
+  >
+    See our 12-month plan to scale this technology
+  </Card>
+  <Card
+    title="Tokenomics"
+    icon="coins"
+    href="/launch/tokenomics"
+  >
+    Understand how FynCom token powers the network
+  </Card>
+  <Card
+    title="Traction"
+    icon="chart-line"
+    href="/launch/traction"
+  >
+    Review our proven market fit and growth metrics
+  </Card>
+  <Card
+    title="Technology"
+    icon="code"
+    href="/technology/overview"
+  >
+    Deep dive into the technical architecture
+  </Card>
+</CardGroup>

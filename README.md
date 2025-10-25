@@ -1,43 +1,72 @@
-# Mintlify Starter Kit
+# FynCom MetaDAO Fundraise Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+This repository contains the investor documentation for FynCom's MetaDAO fundraise. We're raising $1M to scale the economic trust layer for digital communication.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## About FynCom
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+FynCom creates digital trust by adding crypto into calls, texts, emails & DMs. We require unknown senders to stake a small refundable deposit before recipients are notified. This economic proof-of-intent filters spam while compensating recipients.
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+**Key Metrics:**
+- ✅ 500,000+ transactions completed
+- ✅ 10,000+ active users
+- ✅ US Patent 11,310,368 B2 granted
+- ✅ KarmaCall mobile app (iOS/Android) live
+
+## Documentation Structure
+
+This documentation is organized into three main sections:
+
+### 1. MetaDAO Fundraise
+- **Vision & Mission:** Our long-term goals and core principles
+- **The Problem:** Why digital communication is broken
+- **The Solution:** Economic proof-of-intent via refundable stakes
+- **Traction:** Proven metrics and product-market fit
+- **Roadmap:** 12-month execution plan for $1M raise
+- **Tokenomics:** Token structure and performance incentives
+
+### 2. About
+- **Team:** Organization structure, budget allocation, and track record
+
+### 3. Technology
+- **Overview:** Technical architecture, SDK/API, and security features
 
 ## Development
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview documentation locally:
 
-```
+```bash
 npm i -g mint
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+Run the dev server:
 
-```
+```bash
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+View at `http://localhost:3000`
 
-## Publishing changes
+## Key Links
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+- **White Paper:** https://www.karmacall.com/white-paper-original-scam-calls/
+- **KarmaCall App:** https://karmacall.com
+- **Twitter/X:** https://x.com/Fyn_Com
+- **GitHub:** https://github.com/fyncom
 
-## Need help?
+## Investment Opportunity
 
-### Troubleshooting
+**Raising:** $1,000,000 USD minimum via MetaDAO
+**Token:** FynCom (Solana SPL)
+**Use of Funds:** 12 months runway for market expansion, SDK development, and strategic partnerships
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+**Performance Package:** 10M tokens unlocking at 2x, 4x, 8x, 16x, and 32x ICO price milestones
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+## Contact
+
+- **Email:** team@fyncom.com
+- **Discord:** https://discord.gg/fyncom
+- **Partnerships:** partnerships@fyncom.com
+
+---
+
+Built with [Mintlify](https://mintlify.com)

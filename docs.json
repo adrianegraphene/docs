@@ -1,68 +1,55 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "FynCom",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0EA5E9",
+    "light": "#38BDF8",
+    "dark": "#0284C7"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "MetaDAO Fundraise",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Overview",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "index"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Investment Opportunity",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "launch/vision",
+              "launch/problem",
+              "launch/solution",
+              "launch/traction",
+              "launch/roadmap",
+              "launch/tokenomics"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "About",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Company",
             "pages": [
-              "api-reference/introduction"
+              "about/team"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Technology",
+        "groups": [
           {
-            "group": "Endpoint examples",
+            "group": "Technical Documentation",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "technology/overview"
             ]
           }
         ]
@@ -71,14 +58,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "White Paper",
+          "href": "https://www.karmacall.com/white-paper-original-scam-calls/",
+          "icon": "file-lines"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "KarmaCall App",
+          "href": "https://karmacall.com",
+          "icon": "mobile"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/fyncom",
+          "icon": "discord"
         }
       ]
     }
@@ -90,14 +82,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Contact",
+        "href": "mailto:team@fyncom.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Invest Now",
+      "href": "https://metadao.fi"
     }
   },
   "contextual": {
@@ -114,9 +106,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/Fyn_Com",
+      "github": "https://github.com/fyncom",
+      "linkedin": "https://linkedin.com/company/fyncom"
     }
   }
 }
